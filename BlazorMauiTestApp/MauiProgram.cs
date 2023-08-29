@@ -1,8 +1,7 @@
 ﻿using BlazorMauiTestApp.Data;
 using BlazorMauiTestApp.Shiny;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Shiny.Jobs;
+using Shiny;
 
 namespace BlazorMauiTestApp
 {
@@ -28,8 +27,9 @@ namespace BlazorMauiTestApp
 
             builder.Services.AddSingleton<WeatherForecastService>();
             builder.Services.AddSingleton<IWeatherDataStore>(new WeatherDataStore());
-            
+
             builder.Services.AddJob(typeof(LoadWeatherDataJob), "LoadWeatherDataJob");
+            builder.Services.AddNotifications<NotificationDelegate>();
 
             return builder.Build();
         }

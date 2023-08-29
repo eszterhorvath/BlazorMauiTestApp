@@ -1,6 +1,3 @@
-using BlazorMauiTestApp.Shiny;
-using Shiny.Jobs;
-
 namespace BlazorMauiTestApp.Data
 {
     public class WeatherForecastService

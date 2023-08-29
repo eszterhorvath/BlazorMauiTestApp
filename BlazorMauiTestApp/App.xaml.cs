@@ -17,8 +17,9 @@ namespace BlazorMauiTestApp
         protected override async void OnStart()
         {
             base.OnStart();
-
+#if IOS
             await _jobManager.Run("LoadWeatherDataJob");
+#endif
         }
     }
 }
